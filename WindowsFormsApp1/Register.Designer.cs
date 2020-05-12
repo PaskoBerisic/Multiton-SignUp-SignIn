@@ -32,8 +32,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.signUp = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.goBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label2
@@ -68,15 +69,15 @@
             this.textBox4.Size = new System.Drawing.Size(172, 20);
             this.textBox4.TabIndex = 10;
             // 
-            // button2
+            // signUp
             // 
-            this.button2.Location = new System.Drawing.Point(121, 141);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Sign Up";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.signUp.Location = new System.Drawing.Point(121, 122);
+            this.signUp.Name = "signUp";
+            this.signUp.Size = new System.Drawing.Size(75, 23);
+            this.signUp.TabIndex = 9;
+            this.signUp.Text = "Sign Up";
+            this.signUp.UseVisualStyleBackColor = true;
+            this.signUp.Click += new System.EventHandler(this.signUp_Click);
             // 
             // label3
             // 
@@ -87,17 +88,28 @@
             this.label3.TabIndex = 14;
             this.label3.Text = "Register, we won\'t take your kidney";
             // 
+            // goBack
+            // 
+            this.goBack.Location = new System.Drawing.Point(15, 122);
+            this.goBack.Name = "goBack";
+            this.goBack.Size = new System.Drawing.Size(75, 23);
+            this.goBack.TabIndex = 15;
+            this.goBack.Text = "Go Back";
+            this.goBack.UseVisualStyleBackColor = true;
+            this.goBack.Click += new System.EventHandler(this.goBack_Click);
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(208, 170);
+            this.ClientSize = new System.Drawing.Size(208, 157);
+            this.Controls.Add(this.goBack);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.signUp);
             this.Name = "Register";
             this.Text = "Register";
             this.ResumeLayout(false);
@@ -111,7 +123,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button signUp;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button goBack;
     }
 }

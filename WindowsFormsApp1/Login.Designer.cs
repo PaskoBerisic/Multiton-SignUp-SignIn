@@ -32,8 +32,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.loginEmail = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.signIn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.goBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // loginPassword
@@ -68,15 +69,15 @@
             this.loginEmail.Size = new System.Drawing.Size(181, 20);
             this.loginEmail.TabIndex = 12;
             // 
-            // button1
+            // signIn
             // 
-            this.button1.Location = new System.Drawing.Point(121, 124);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Sign In";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.signIn.Location = new System.Drawing.Point(121, 124);
+            this.signIn.Name = "signIn";
+            this.signIn.Size = new System.Drawing.Size(75, 23);
+            this.signIn.TabIndex = 11;
+            this.signIn.Text = "Sign In";
+            this.signIn.UseVisualStyleBackColor = true;
+            this.signIn.Click += new System.EventHandler(this.signIn_Click);
             // 
             // label1
             // 
@@ -88,15 +89,26 @@
             this.label1.Text = "Come in, just sign in !!!";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // goBack
+            // 
+            this.goBack.Location = new System.Drawing.Point(12, 124);
+            this.goBack.Name = "goBack";
+            this.goBack.Size = new System.Drawing.Size(75, 23);
+            this.goBack.TabIndex = 15;
+            this.goBack.Text = "Go Back";
+            this.goBack.UseVisualStyleBackColor = true;
+            this.goBack.Click += new System.EventHandler(this.goBack_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(208, 170);
+            this.Controls.Add(this.goBack);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.loginEmail);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.signIn);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.loginPassword);
             this.Name = "Login";
@@ -112,7 +124,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox loginEmail;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button signIn;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button goBack;
     }
 }

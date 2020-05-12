@@ -18,10 +18,14 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void signIn_Click(object sender, EventArgs e)
         {
-            var user = ConfigurationManager.AppSettings["username"];
-            var password = ConfigurationManager.AppSettings["pass"];
+             var user = ConfigurationManager.AppSettings["user"];
+              var password = ConfigurationManager.AppSettings["pass"];
+           /* string user = "admin";
+            string password = "admin";*/
+            
+
             
             if(user == loginEmail.Text) 
             {    
@@ -34,8 +38,16 @@ namespace WindowsFormsApp1
                 {
                     MessageBox.Show("FCK OFF !!!");
                 }
-
+                
             }
+            MessageBox.Show("Welcome Master");
+        }
+
+        private void goBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 form1 = new Form1();
+            form1.ShowDialog();
         }
     }
 }
