@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Configuration;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,16 +21,22 @@ namespace WindowsFormsApp1
 
         private void signIn_Click(object sender, EventArgs e)
         {
-             var user = ConfigurationManager.AppSettings["user"];
-              var password = ConfigurationManager.AppSettings["pass"];
-           /* string user = "admin";
-            string password = "admin";*/
-            
+            var user = ConfigurationManager.AppSettings["user"];
+            var password = ConfigurationManager.AppSettings["pass"];
+            /* string user = "admin";
+             string password = "admin";*/
 
-            
-            if(user == loginEmail.Text) 
-            {    
-                if(password == loginPassword.Text)
+            StreamReader streamReader = new StreamReader("credentials.txt");
+            string usernameChecker = streamReader.ReadLine();
+            string passwordChecker = streamReader.ReadLine();
+            if (user == usernameChecker && password == passwordChecker)
+                MessageBox.Show("COME INE!!!!!!!!!!!!!!!");
+            else
+                MessageBox.Show("FO");
+            /*
+        if (user == loginEmail.Text)
+            {
+                if (password == loginPassword.Text)
                 {
                     MessageBox.Show("Welcome Master");
 
@@ -38,16 +45,16 @@ namespace WindowsFormsApp1
                 {
                     MessageBox.Show("FCK OFF !!!");
                 }
-                
+
             }
-            MessageBox.Show("Welcome Master");
+            MessageBox.Show("Welcome Master");*/
         }
 
         private void goBack_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form1 form1 = new Form1();
-            form1.ShowDialog();
+            {
+                this.Hide();
+                Form1 form1 = new Form1();
+                form1.ShowDialog();
+            }
         }
-    }
-}
+} 

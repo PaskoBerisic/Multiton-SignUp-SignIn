@@ -30,8 +30,8 @@
         {
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.emailRegister = new System.Windows.Forms.TextBox();
+            this.passwordRegister = new System.Windows.Forms.TextBox();
             this.signUp = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.goBack = new System.Windows.Forms.Button();
@@ -55,19 +55,19 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "Password";
             // 
-            // textBox5
+            // emailRegister
             // 
-            this.textBox5.Location = new System.Drawing.Point(15, 49);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(172, 20);
-            this.textBox5.TabIndex = 11;
+            this.emailRegister.Location = new System.Drawing.Point(15, 49);
+            this.emailRegister.Name = "emailRegister";
+            this.emailRegister.Size = new System.Drawing.Size(172, 20);
+            this.emailRegister.TabIndex = 11;
             // 
-            // textBox4
+            // passwordRegister
             // 
-            this.textBox4.Location = new System.Drawing.Point(15, 92);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(172, 20);
-            this.textBox4.TabIndex = 10;
+            this.passwordRegister.Location = new System.Drawing.Point(15, 92);
+            this.passwordRegister.Name = "passwordRegister";
+            this.passwordRegister.Size = new System.Drawing.Size(172, 20);
+            this.passwordRegister.TabIndex = 10;
             // 
             // signUp
             // 
@@ -107,8 +107,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.emailRegister);
+            this.Controls.Add(this.passwordRegister);
             this.Controls.Add(this.signUp);
             this.Name = "Register";
             this.Text = "Register";
@@ -121,8 +121,8 @@
 
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox emailRegister;
+        private System.Windows.Forms.TextBox passwordRegister;
         private System.Windows.Forms.Button signUp;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button goBack;

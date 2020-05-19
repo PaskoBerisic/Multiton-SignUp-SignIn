@@ -8,12 +8,12 @@ namespace WindowsFormsApp1
 {
     class MultitonLogic
     {
-        private static readonly MultitonLogic instance = new MultitonLogic();
+        private static readonly Dictionary<string,string> instance = new Dictionary<string, string>();
         private MultitonLogic()
         {
             // read data from config
             
-        }
+        } 
         public static MultitonLogic Instance { get { return instance; } }
 
         public readonly string email;
