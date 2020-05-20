@@ -21,33 +21,7 @@ namespace WindowsFormsApp1
 
         private void signIn_Click(object sender, EventArgs e)
         {
-            var user = ConfigurationManager.AppSettings["user"];
-            var password = ConfigurationManager.AppSettings["pass"];
-            /* string user = "admin";
-             string password = "admin";*/
-
-            StreamReader streamReader = new StreamReader("credentials.txt");
-            string usernameChecker = streamReader.ReadLine();
-            string passwordChecker = streamReader.ReadLine();
-            if (user == usernameChecker && password == passwordChecker)
-                MessageBox.Show("COME INE!!!!!!!!!!!!!!!");
-            else
-                MessageBox.Show("FO");
-            /*
-        if (user == loginEmail.Text)
-            {
-                if (password == loginPassword.Text)
-                {
-                    MessageBox.Show("Welcome Master");
-
-                }
-                else
-                {
-                    MessageBox.Show("FCK OFF !!!");
-                }
-
-            }
-            MessageBox.Show("Welcome Master");*/
+           
         }
 
         private void goBack_Click(object sender, EventArgs e)

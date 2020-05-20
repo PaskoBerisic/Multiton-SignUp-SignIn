@@ -31,7 +31,7 @@
             this.loginPassword = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.loginEmail = new System.Windows.Forms.TextBox();
+            this.loginUsername = new System.Windows.Forms.TextBox();
             this.signIn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.goBack = new System.Windows.Forms.Button();
@@ -49,9 +49,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(12, 32);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.Size = new System.Drawing.Size(55, 13);
             this.label3.TabIndex = 10;
-            this.label3.Text = "E-mail";
+            this.label3.Text = "Username";
             // 
             // label4
             // 
@@ -62,12 +62,12 @@
             this.label4.TabIndex = 13;
             this.label4.Text = "Password";
             // 
-            // loginEmail
+            // loginUsername
             // 
-            this.loginEmail.Location = new System.Drawing.Point(15, 48);
-            this.loginEmail.Name = "loginEmail";
-            this.loginEmail.Size = new System.Drawing.Size(181, 20);
-            this.loginEmail.TabIndex = 12;
+            this.loginUsername.Location = new System.Drawing.Point(15, 48);
+            this.loginUsername.Name = "loginUsername";
+            this.loginUsername.Size = new System.Drawing.Size(181, 20);
+            this.loginUsername.TabIndex = 12;
             // 
             // signIn
             // 
@@ -107,7 +107,7 @@
             this.Controls.Add(this.goBack);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.loginEmail);
+            this.Controls.Add(this.loginUsername);
             this.Controls.Add(this.signIn);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.loginPassword);
@@ -123,7 +123,7 @@
         private System.Windows.Forms.TextBox loginPassword;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox loginEmail;
+        private System.Windows.Forms.TextBox loginUsername;
         private System.Windows.Forms.Button signIn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button goBack;
