@@ -12,12 +12,12 @@ namespace WindowsFormsApp1
         private MultitonLogic()
         {
             // read data from config
-            email = "";
+            username = "";
             passowrd = "";
         } 
-        public static MultitonLogic Instance { get; }
+        public static MultitonLogic Instance { get; set; }
 
-        public readonly string email;
+        public readonly string username;
         public readonly string passowrd;
     }
 }

@@ -21,7 +21,12 @@ namespace WindowsFormsApp1
 
         private void signIn_Click(object sender, EventArgs e)
         {
-           
+            string user = "admin";
+            string password = "admin";
+            if (loginUsername.Text == user && loginPassword.Text == password)
+                MessageBox.Show("DESI DJOLE SEF");
+            else
+                MessageBox.Show("ZA DOMAAAA");
         }
 
         private void goBack_Click(object sender, EventArgs e)

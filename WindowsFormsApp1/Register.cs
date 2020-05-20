@@ -22,7 +22,9 @@ namespace WindowsFormsApp1
 
         private void signUp_Click(object sender, EventArgs e)
         {
-           
+            MultitonLogic multiton = MultitonLogic.Instance;
+            multiton.username = registerUsername.Text;
+
         }
 
         private void goBack_Click(object sender, EventArgs e)
