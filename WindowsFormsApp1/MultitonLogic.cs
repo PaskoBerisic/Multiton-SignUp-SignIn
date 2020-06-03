@@ -27,13 +27,34 @@ namespace WindowsFormsApp1
             //provjera korisnika je li u bazi
             // ako je, return flase
             //else dodaj novog, return true
+
+            for (int i = 0; i < TEXTFILE.LENGTH; int++)
+            {
+                if (username == textfile.username)
+                    return false;
+                else
+                    TEXTFILE.ADD = username;
+                    TEXTFILE.ADD = password;
+                    return true;
+            }
+
+
             return false;
         }
         public User GetUser(string username)
         {
             //for provjera postojio li username
             // ako postoji, vrati usera else null
-            return;
+
+            for (int i = 0; i<TEXTFILE.LENGTH; int++)
+            {
+                if (username == textfile.username)
+                    return textfile.User;
+                else
+                    return null;
+            }
+
+            throw new NotImplementedException();
         }
       
     }
