@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp1
@@ -34,6 +28,23 @@ namespace WindowsFormsApp1
             this.Hide();
             Register register = new Register();
             register.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            StreamReader sr = new StreamReader(@"C:\Users\Pasko\Desktop\login.txt");
+            MessageBox.Show(sr.ReadToEnd());
+            sr.Close();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            StreamWriter sw = new StreamWriter(@"C:\Users\Pasko\Desktop\login.txt");
+            sw.WriteLine("JA JOS POVEECA MACKA HAHAHAHAHHA");
+            sw.WriteLine("\n");
+            sw.WriteLine("MACORYYYYYYYYYYYY");
+            sw.Close();
+            
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,8 +19,10 @@ namespace WindowsFormsApp1
         private static readonly Dictionary<string,User> _instance = new Dictionary<string, User>();
         private MultitonLogic()
         {
-          //read data from config
-        } 
+            //read data from config
+            StreamReader sr = new StreamReader(@"C:\Users\Pasko\Desktop\login.txt");
+            StreamWriter sw = new StreamWriter(@"C:\Users\Pasko\Desktop\login.txt");
+        }
         public static MultitonLogic Instance { get; set; }
 
         public bool AddUser(string username, string password)
@@ -27,10 +30,10 @@ namespace WindowsFormsApp1
             //provjera korisnika je li u bazi
             // ako je, return flase
             //else dodaj novog, return true
-
-            for (int i = 0; i < TEXTFILE.LENGTH; int++)
+            TextBox username = sr.ReadToEnd();
+            for (int i = 0; i ; i++)
             {
-                if (username == textfile.username)
+                if (username == )
                     return false;
                 else
                     TEXTFILE.ADD = username;
@@ -45,17 +48,18 @@ namespace WindowsFormsApp1
         {
             //for provjera postojio li username
             // ako postoji, vrati usera else null
-
-            for (int i = 0; i<TEXTFILE.LENGTH; int++)
+            /*
+            for (int i = 0; i<TEXTFILE.LENGTH; i++)
             {
                 if (username == textfile.username)
                     return textfile.User;
                 else
                     return null;
-            }
+            }*/
 
             throw new NotImplementedException();
         }
-      
+        StreamReader sr = new StreamReader(@"C:\Users\Pasko\Desktop\login.txt");
+        StreamWriter sw = new StreamWriter(@"C:\Users\Pasko\Desktop\login.txt");
     }
 }
