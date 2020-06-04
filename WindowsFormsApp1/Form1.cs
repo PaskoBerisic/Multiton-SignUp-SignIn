@@ -32,7 +32,7 @@ namespace WindowsFormsApp1
 
         private void button4_Click(object sender, EventArgs e)
         {
-            StreamReader sr = new StreamReader(@"C:\Users\Pasko\Desktop\login.txt");
+            StreamReader sr = new StreamReader(@"C:\Users\Korisnik\source\repos\Multiton-SignUp-SignIn\config.txt");
             MessageBox.Show(sr.ReadToEnd());
             sr.Close();
         }
@@ -41,10 +41,14 @@ namespace WindowsFormsApp1
         {
             StreamWriter sw = new StreamWriter(@"C:\Users\Pasko\Desktop\login.txt");
             sw.WriteLine("JA JOS POVEECA MACKA HAHAHAHAHHA");
-            sw.WriteLine("\n");
             sw.WriteLine("MACORYYYYYYYYYYYY");
-            sw.Close();
+            sw.Flush();
             
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

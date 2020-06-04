@@ -20,8 +20,8 @@ namespace WindowsFormsApp1
         private MultitonLogic()
         {
             //read data from config
-            StreamReader sr = new StreamReader(@"C:\Users\Pasko\Desktop\login.txt");
-            StreamWriter sw = new StreamWriter(@"C:\Users\Pasko\Desktop\login.txt");
+            StreamReader sr = new StreamReader(@"C:\Users\Korisnik\source\repos\Multiton-SignUp-SignIn\config.txt");
+            StreamWriter sw = new StreamWriter(@"C:\Users\Korisnik\source\repos\Multiton-SignUp-SignIn\config.txt");
         }
         public static MultitonLogic Instance { get; set; }
 
@@ -30,36 +30,35 @@ namespace WindowsFormsApp1
             //provjera korisnika je li u bazi
             // ako je, return flase
             //else dodaj novog, return true
-            TextBox username = sr.ReadToEnd();
-            for (int i = 0; i ; i++)
-            {
-                if (username == )
+             string temporary = sr.ReadToEnd();
+              for (int i = 0; i<10 ; i++)
+              {
+                if (temporary == username)
                     return false;
                 else
-                    TEXTFILE.ADD = username;
-                    TEXTFILE.ADD = password;
+                    sw.WriteLine(username);
+                    sw.WriteLine(password);
+                    sw.Flush();
                     return true;
-            }
-
-
-            return false;
-        }
-        public User GetUser(string username)
-        {
+              }
+              return false;
+          }
+          public User GetUser(string username)
+          {
             //for provjera postojio li username
             // ako postoji, vrati usera else null
-            /*
-            for (int i = 0; i<TEXTFILE.LENGTH; i++)
-            {
-                if (username == textfile.username)
-                    return textfile.User;
-                else
-                    return null;
-            }*/
-
-            throw new NotImplementedException();
+            User user = new User();
+            string temporary = sr.ReadToEnd();
+            for (int i = 0; i<10; i++)
+              {
+                  if (temporary == username )
+                      return user;
+                  else
+                      return null;
+              }
+            return null;
         }
-        StreamReader sr = new StreamReader(@"C:\Users\Pasko\Desktop\login.txt");
-        StreamWriter sw = new StreamWriter(@"C:\Users\Pasko\Desktop\login.txt");
+        StreamReader sr = new StreamReader(@"C:\Users\Korisnik\source\repos\Multiton-SignUp-SignIn\config.txt");
+        StreamWriter sw = new StreamWriter(@"C:\Users\Korisnik\source\repos\Multiton-SignUp-SignIn\config.txt");
     }
 }
