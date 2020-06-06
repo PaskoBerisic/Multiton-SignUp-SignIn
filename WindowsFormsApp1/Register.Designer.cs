@@ -82,11 +82,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 9);
+            this.label3.Location = new System.Drawing.Point(70, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(175, 13);
+            this.label3.Size = new System.Drawing.Size(66, 13);
             this.label3.TabIndex = 14;
-            this.label3.Text = "Register, we won\'t take your kidney";
+            this.label3.Text = "Register fast";            
             // 
             // goBack
             // 

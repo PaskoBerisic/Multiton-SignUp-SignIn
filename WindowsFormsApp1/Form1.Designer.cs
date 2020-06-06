@@ -35,6 +35,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button6 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
@@ -80,9 +81,9 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(16, 150);
+            this.button5.Location = new System.Drawing.Point(12, 129);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(178, 23);
+            this.button5.Size = new System.Drawing.Size(182, 23);
             this.button5.TabIndex = 5;
             this.button5.Text = "Add predefiened text ";
             this.button5.UseVisualStyleBackColor = true;
@@ -90,9 +91,9 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(16, 190);
+            this.button3.Location = new System.Drawing.Point(12, 158);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(178, 23);
+            this.button3.Size = new System.Drawing.Size(182, 23);
             this.button3.TabIndex = 6;
             this.button3.Text = "Lets try to add input text to config";
             this.button3.UseVisualStyleBackColor = true;
@@ -100,16 +101,27 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(220, 190);
+            this.textBox2.Location = new System.Drawing.Point(234, 161);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(108, 20);
             this.textBox2.TabIndex = 7;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(85, 187);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(109, 23);
+            this.button6.TabIndex = 8;
+            this.button6.Text = "CLEAR ME ALL";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(354, 292);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button5);
@@ -133,6 +145,7 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button button6;
     }
 }
 

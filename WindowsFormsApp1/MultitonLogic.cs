@@ -9,19 +9,19 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    class User
+    public class User
     {
         public string username;
         public string password;
     }
-    class MultitonLogic
+    public class MultitonLogic
     {
         private static readonly Dictionary<string,User> _instance = new Dictionary<string, User>();
-        private MultitonLogic()
+        public MultitonLogic()
         {
             //read data from config
-            StreamReader sr = new StreamReader(@"C:\Users\Korisnik\source\repos\Multiton-SignUp-SignIn\config.txt");
-            StreamWriter sw = new StreamWriter(@"C:\Users\Korisnik\source\repos\Multiton-SignUp-SignIn\config.txt");
+            this.sw = sw;
+            this.sr = sr;
         }
         public static MultitonLogic Instance { get; set; }
 
@@ -41,7 +41,9 @@ namespace WindowsFormsApp1
                     sw.Flush();
                     return true;
               }
-              return false;
+            sw.Close();
+
+            return false;
           }
           public User GetUser(string username)
           {
@@ -56,9 +58,12 @@ namespace WindowsFormsApp1
                   else
                       return null;
               }
+            sr.Close();
+
             return null;
         }
         StreamReader sr = new StreamReader(@"C:\Users\Korisnik\source\repos\Multiton-SignUp-SignIn\config.txt");
-        StreamWriter sw = new StreamWriter(@"C:\Users\Korisnik\source\repos\Multiton-SignUp-SignIn\config.txt");
+        StreamWriter sw = new StreamWriter(@"C:\Users\Korisnik\source\repos\Multiton-SignUp-SignIn\config.txt", true);
+
     }
 }
