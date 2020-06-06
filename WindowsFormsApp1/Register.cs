@@ -22,10 +22,22 @@ namespace WindowsFormsApp1
 
         private void signUp_Click(object sender, EventArgs e)
         {
-            var answer = MultitonLogic.Instance.AddUser(registerUsername.Text, "passowrd");
+            string tempUser = registerUsername.Text;
+            string tempPass = registerPassword.Text;
+
+
+            User checker = MultitonLogic.Instance.GetUser(tempUser);
+
+            if (registerUsername.Text == checker.ToString())
+                MessageBox.Show("Korisničko ime zauzeto!");
+            else
+                MultitonLogic.Instance.AddUser(tempUser, tempPass);
+                MessageBox.Show("Uspješno ste se registrirali.");
+
             // if answer no, korisnik postoji
             // else mozes se registrirati
-        
+
+
         }
 
         private void goBack_Click(object sender, EventArgs e)

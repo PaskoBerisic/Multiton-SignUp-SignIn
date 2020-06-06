@@ -20,29 +20,40 @@ namespace WindowsFormsApp1
         public MultitonLogic()
         {
             //read data from config
-            this.sw = sw;
-            this.sr = sr;
+            StreamReader sr = new StreamReader(@"C:\Users\Korisnik\source\repos\Multiton-SignUp-SignIn\config.txt");
+            StreamWriter sw = new StreamWriter(@"C:\Users\Korisnik\source\repos\Multiton-SignUp-SignIn\config.txt", true);
         }
         public static MultitonLogic Instance { get; set; }
+
+
+        StreamReader sr = new StreamReader(@"C:\Users\Pasko\Source\Repos\PaskoBerisic\Multiton-SignUp-SignIn\config.txt");
+        StreamWriter sw = new StreamWriter(@"C:\Users\Pasko\Source\Repos\PaskoBerisic\Multiton-SignUp-SignIn\config.txt", true);
+        /*
+         * LAPTOP VERSION
+        StreamReader sr = new StreamReader(@"C:\Users\Korisnik\source\repos\Multiton-SignUp-SignIn\config.txt");
+        StreamWriter sw = new StreamWriter(@"C:\Users\Korisnik\source\repos\Multiton-SignUp-SignIn\config.txt", true);
+        */
 
         public bool AddUser(string username, string password)
         {
             //provjera korisnika je li u bazi
             // ako je, return flase
             //else dodaj novog, return true
-             string temporary = sr.ReadToEnd();
-              for (int i = 0; i<10 ; i++)
-              {
+            string temporary = sr.ReadLine();
+            while (temporary != null)
+            {
+                //Check if username exist
                 if (temporary == username)
-                    return false;
+                    break;
                 else
                     sw.WriteLine(username);
                     sw.WriteLine(password);
+                    sw.WriteLine("-");
                     sw.Flush();
-                    return true;
-              }
+                //Read the next line
+                temporary = sr.ReadLine();
+            }
             sw.Close();
-
             return false;
           }
           public User GetUser(string username)
@@ -50,20 +61,21 @@ namespace WindowsFormsApp1
             //for provjera postojio li username
             // ako postoji, vrati usera else null
             User user = new User();
-            string temporary = sr.ReadToEnd();
-            for (int i = 0; i<10; i++)
-              {
-                  if (temporary == username )
-                      return user;
-                  else
-                      return null;
-              }
+            string temporary = sr.ReadLine();
+            while (temporary != null)
+            {
+                //Check if username exist
+                if (temporary == username)
+                    return user;
+                else
+                    return null;
+                //Read the next line
+                temporary = sr.ReadLine();
+            }
+            sr.Dispose();
             sr.Close();
-
             return null;
         }
-        StreamReader sr = new StreamReader(@"C:\Users\Korisnik\source\repos\Multiton-SignUp-SignIn\config.txt");
-        StreamWriter sw = new StreamWriter(@"C:\Users\Korisnik\source\repos\Multiton-SignUp-SignIn\config.txt", true);
-
+      
     }
 }
