@@ -16,65 +16,74 @@ namespace WindowsFormsApp1
     }
     public class MultitonLogic
     {
-        private static readonly Dictionary<string,User> _instance = new Dictionary<string, User>();
+        private static readonly Dictionary<string, User> _instance = new Dictionary<string, User>();
         public MultitonLogic()
         {
             //read data from config
-            StreamReader sr = new StreamReader(@"C:\Users\Korisnik\source\repos\Multiton-SignUp-SignIn\config.txt");
+
+            /*
+             * LAPTOP VERSION
+             * StreamReader sr = new StreamReader(@"C:\Users\Korisnik\source\repos\Multiton-SignUp-SignIn\config.txt");
             StreamWriter sw = new StreamWriter(@"C:\Users\Korisnik\source\repos\Multiton-SignUp-SignIn\config.txt", true);
+            */
         }
         public static MultitonLogic Instance { get; set; }
 
-
-        StreamReader sr = new StreamReader(@"C:\Users\Pasko\Source\Repos\PaskoBerisic\Multiton-SignUp-SignIn\config.txt");
-        StreamWriter sw = new StreamWriter(@"C:\Users\Pasko\Source\Repos\PaskoBerisic\Multiton-SignUp-SignIn\config.txt", true);
         /*
          * LAPTOP VERSION
         StreamReader sr = new StreamReader(@"C:\Users\Korisnik\source\repos\Multiton-SignUp-SignIn\config.txt");
         StreamWriter sw = new StreamWriter(@"C:\Users\Korisnik\source\repos\Multiton-SignUp-SignIn\config.txt", true);
         */
-
         public bool AddUser(string username, string password)
         {
+            StreamReader sr = new StreamReader(@"C:\Users\Pasko\Source\Repos\PaskoBerisic\Multiton-SignUp-SignIn\config.txt");
             //provjera korisnika je li u bazi
             // ako je, return flase
             //else dodaj novog, return true
             string temporary = sr.ReadLine();
             while (temporary != null)
             {
+                StreamWriter sw = new StreamWriter(@"C:\Users\Pasko\Source\Repos\PaskoBerisic\Multiton-SignUp-SignIn\config.txt",true);
                 //Check if username exist
                 if (temporary == username)
                     break;
                 else
-                    sw.WriteLine(username);
+                    sr.Close();
+                sw.Write(username);
+                    sw.Write("|");
                     sw.WriteLine(password);
                     sw.WriteLine("-");
                     sw.Flush();
+                    sw.Close();
                 //Read the next line
                 temporary = sr.ReadLine();
             }
-            sw.Close();
             return false;
           }
-          public User GetUser(string username)
+          public bool GetUser(string username)
           {
-            //for provjera postojio li username
-            // ako postoji, vrati usera else null
-            User user = new User();
-            string temporary = sr.ReadLine();
-            while (temporary != null)
-            {
+                StreamReader sr = new StreamReader(@"C:\Users\Pasko\Source\Repos\PaskoBerisic\Multiton-SignUp-SignIn\config.txt");
+                //for provjera postojio li username
+                // ako postoji, vrati usera else null
+                User user = new User();
+                string temporary = sr.ReadLine();
+                int index = 0;
+                
+                while (temporary != null)
+                {
+                //Remove everything after splitter
+                index = temporary.IndexOf("|");
+                if (index > 0)
+                    temporary = temporary.Substring(0, index);
                 //Check if username exist
                 if (temporary == username)
-                    return user;
-                else
-                    return null;
-                //Read the next line
-                temporary = sr.ReadLine();
-            }
-            sr.Dispose();
-            sr.Close();
-            return null;
+                        return true;
+                    //Read the next line
+                    temporary = sr.ReadLine();
+                }
+                sr.Dispose();
+                sr.Close();
+            return false;
         }
       
     }

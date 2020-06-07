@@ -25,9 +25,8 @@ namespace WindowsFormsApp1
             string tempUser = loginUsername.Text;
             string tempPass = loginPassword.Text;
 
-            User checker = MultitonLogic.Instance.GetUser(tempUser);
-
-            if (loginUsername.Text == checker.ToString()) 
+            var checker = instance.GetUser(tempUser);
+            if (checker == true) 
                 MessageBox.Show("Dobrodošli!");
             else
                 MessageBox.Show("Ne postojite u našoj bazi korisnika");
