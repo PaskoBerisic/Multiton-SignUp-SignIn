@@ -27,7 +27,7 @@ namespace WindowsFormsApp1
 
             var checker = instance.GetUser(tempUser);
             if (checker == true) 
-                MessageBox.Show("Dobrodošli!");
+                MessageBox.Show("Dobrodošli, !", tempUser);
             else
                 MessageBox.Show("Ne postojite u našoj bazi korisnika");
         }
