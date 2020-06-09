@@ -88,13 +88,14 @@ namespace WindowsFormsApp1
             }
             return false;
         }
-        public bool GetUser(string username)
+        public bool GetUser(string username,string password)
         {
             StreamReader sr = new StreamReader(@"C:\Users\Pasko\Source\Repos\PaskoBerisic\Multiton-SignUp-SignIn\config.txt");
             //for provjera postojio li username
             // ako postoji, vrati usera else null
             User user = new User();
             string temporary = sr.ReadLine();
+            string temporary2 =temporary;
             int index = 0;
 
             while (temporary != null)
@@ -102,13 +103,16 @@ namespace WindowsFormsApp1
                 //Remove everything after splitter
                 index = temporary.IndexOf("|");
                 if (index > 0)
+                {
                     temporary = temporary.Substring(0, index);
+                    temporary2 = temporary2.Substring(index+1);
+                 }
                 //Check if username exist
-                if (temporary == username)
+                if (temporary == username && temporary2 == password)
                     return true;
                 //Read the next line
                 temporary = sr.ReadLine();
-                
+                temporary2 = temporary;
             }
             sr.Dispose();
             sr.Close();

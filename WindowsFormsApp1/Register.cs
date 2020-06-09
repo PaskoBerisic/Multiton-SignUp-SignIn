@@ -27,7 +27,7 @@ namespace WindowsFormsApp1
             string tempPass = registerPassword.Text;
 
 
-           var checker = instance.GetUser(tempUser);
+           var checker = instance.GetUser(tempUser, tempPass);
 
            if (checker == true)
                 MessageBox.Show("Korisničko ime zauzeto!");

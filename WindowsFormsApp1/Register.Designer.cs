@@ -66,6 +66,7 @@
             // 
             this.registerPassword.Location = new System.Drawing.Point(15, 92);
             this.registerPassword.Name = "registerPassword";
+            this.registerPassword.PasswordChar = '*';
             this.registerPassword.Size = new System.Drawing.Size(172, 20);
             this.registerPassword.TabIndex = 10;
             // 
@@ -86,7 +87,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 13);
             this.label3.TabIndex = 14;
-            this.label3.Text = "Register fast";            
+            this.label3.Text = "Register fast";
             // 
             // goBack
             // 
