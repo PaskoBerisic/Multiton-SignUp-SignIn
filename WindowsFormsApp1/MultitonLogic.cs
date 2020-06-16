@@ -10,115 +10,32 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public class User
-    {
-        public string username;
-        public string password;
-    }
     public class MultitonLogic
     {
-        private static readonly Dictionary<string, User> _instance = new Dictionary<string, User>();
-        public MultitonLogic()
+        private static readonly Dictionary<string, MultitonLogic> users = new Dictionary<string, MultitonLogic>();
+        private MultitonLogic(string username)
         {
-            //read data from config
-
-            /*
-             * LAPTOP VERSION
-             * StreamReader sr = new StreamReader(@"C:\Users\Korisnik\source\repos\Multiton-SignUp-SignIn\config.txt");
-            StreamWriter sw = new StreamWriter(@"C:\Users\Korisnik\source\repos\Multiton-SignUp-SignIn\config.txt", true);
-            */
+            Username = username;
         }
-        public static MultitonLogic Instance { get; set; }
+        public string Username { get; private set; }
+        public string Password { get; private set; }
 
-        /*
-         * LAPTOP VERSION
-        StreamReader sr = new StreamReader(@"C:\Users\Korisnik\source\repos\Multiton-SignUp-SignIn\config.txt");
-        StreamWriter sw = new StreamWriter(@"C:\Users\Korisnik\source\repos\Multiton-SignUp-SignIn\config.txt", true);
-        */
-        /*
-        public void UpdateBase()
+        public void SetPassword(string password)
         {
-            StreamReader sr = new StreamReader(@"C:\Users\Pasko\Source\Repos\PaskoBerisic\Multiton-SignUp-SignIn\config.txt");
-            StreamWriter sw = new StreamWriter(@"C:\Users\Pasko\Source\Repos\PaskoBerisic\Multiton-SignUp-SignIn\username's.txt",true);
-            string temporary = sr.ReadLine();
-            int index = 0;
-            while (temporary != null)
-            {
-                if (temporary != "-")
-                {
-                    if (index > 0)
-                    {
-                        index = temporary.IndexOf("|");
-                        temporary = temporary.Substring(0, index);
-                        sw.WriteLine(temporary);
-                        sw.WriteLine("-");
-                        sw.Flush();
-                        
-                    }
-                }
-                temporary = sr.ReadLine();
-            }
-            sw.Close();
-            sr.Dispose();
-            sr.Close();
-        }*/
-
-        public bool AddUser(string username, string password)
-        {
-            StreamReader sr = new StreamReader(@"C:\Users\Pasko\Source\Repos\PaskoBerisic\Multiton-SignUp-SignIn\username's.txt");
-            //provjera korisnika je li u bazi
-            // ako je, return flase
-            //else dodaj novog, return true
-            string temporary = sr.ReadLine();
-            while (temporary != null)
-            {
-                StreamWriter sw = new StreamWriter(@"C:\Users\Pasko\Source\Repos\PaskoBerisic\Multiton-SignUp-SignIn\config.txt", true);
-                //Check if username exist
-                if (temporary == username)
-                    break;
-                else
-                sw.Write(username);
-                sw.Write("|");
-                sw.WriteLine(password);
-                sw.WriteLine("-");
-                sw.Flush();
-                sw.Close();
-                //Read the next line
-                temporary = sr.ReadLine();
-            }
-            return false;
+            Password = password;
         }
-        public bool GetUser(string username,string password)
+        
+        public static MultitonLogic GetInstance(string username)
         {
-            StreamReader sr = new StreamReader(@"C:\Users\Pasko\Source\Repos\PaskoBerisic\Multiton-SignUp-SignIn\config.txt");
-            //for provjera postojio li username
-            // ako postoji, vrati usera else null
-            User user = new User();
-            string temporary = sr.ReadLine();
-            string temporary2 =temporary;
-            int index = 0;
-
-            while (temporary != null)
-            {
-                //Remove everything after splitter
-                index = temporary.IndexOf("|");
-                if (index > 0)
-                {
-                    temporary = temporary.Substring(0, index);
-                    temporary2 = temporary2.Substring(index+1);
-                 }
-                //Check if username exist
-                if (temporary == username && temporary2 == password)
-                    return true;
-                //Read the next line
-                temporary = sr.ReadLine();
-                temporary2 = temporary;
-            }
-            sr.Dispose();
-            sr.Close();
-            
-            return false;
+            if (!users.ContainsKey(username))
+                users.Add(username, new MultitonLogic(username));
+            return users[username];
         }
 
+        public static bool Exists(string username)
+        {
+            return users.ContainsKey(username);
+        }
+        
     }
 }

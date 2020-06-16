@@ -91,18 +91,19 @@
             // 
             // goBack
             // 
+            this.goBack.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.goBack.Location = new System.Drawing.Point(15, 122);
             this.goBack.Name = "goBack";
             this.goBack.Size = new System.Drawing.Size(75, 23);
             this.goBack.TabIndex = 15;
-            this.goBack.Text = "Go Back";
+            this.goBack.Text = "Cancel";
             this.goBack.UseVisualStyleBackColor = true;
-            this.goBack.Click += new System.EventHandler(this.goBack_Click);
             // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.goBack;
             this.ClientSize = new System.Drawing.Size(208, 157);
             this.Controls.Add(this.goBack);
             this.Controls.Add(this.label3);
@@ -111,7 +112,12 @@
             this.Controls.Add(this.registerUsername);
             this.Controls.Add(this.registerPassword);
             this.Controls.Add(this.signUp);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Register";
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Register";
             this.ResumeLayout(false);
             this.PerformLayout();

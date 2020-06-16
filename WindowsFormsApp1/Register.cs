@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    
+
     public partial class Register : Form
     {
         public Register()
@@ -22,31 +22,18 @@ namespace WindowsFormsApp1
 
         private void signUp_Click(object sender, EventArgs e)
         {
-            MultitonLogic instance = new MultitonLogic();
+
             string tempUser = registerUsername.Text;
             string tempPass = registerPassword.Text;
+            MultitonLogic multiton = MultitonLogic.GetInstance(tempUser);
 
-
-           var checker = instance.GetUser(tempUser, tempPass);
-
-           if (checker == true)
+            if (MultitonLogic.Exists(tempUser) == true)
                 MessageBox.Show("Korisničko ime zauzeto!");
-            else { 
-                instance.AddUser(tempUser, tempPass);
+            else
+            {
+                MultitonLogic.GetInstance(tempUser);
                 MessageBox.Show("Uspješno ste se registrirali.");
             }
-
-            // if answer no, korisnik postoji
-            // else mozes se registrirati
-
-
-        }
-
-        private void goBack_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form1 form1 = new Form1();
-            form1.ShowDialog();
         }
     }
 }

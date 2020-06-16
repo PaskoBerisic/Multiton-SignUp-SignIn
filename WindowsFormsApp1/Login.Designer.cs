@@ -96,14 +96,14 @@
             this.goBack.Name = "goBack";
             this.goBack.Size = new System.Drawing.Size(75, 23);
             this.goBack.TabIndex = 15;
-            this.goBack.Text = "Go Back";
+            this.goBack.Text = "Cancel";
             this.goBack.UseVisualStyleBackColor = true;
-            this.goBack.Click += new System.EventHandler(this.goBack_Click);
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.goBack;
             this.ClientSize = new System.Drawing.Size(208, 170);
             this.Controls.Add(this.goBack);
             this.Controls.Add(this.label1);
@@ -112,7 +112,12 @@
             this.Controls.Add(this.signIn);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.loginPassword);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Login";
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();

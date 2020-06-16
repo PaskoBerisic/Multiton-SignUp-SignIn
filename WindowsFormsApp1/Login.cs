@@ -21,22 +21,16 @@ namespace WindowsFormsApp1
 
         private void signIn_Click(object sender, EventArgs e)
         {
-            MultitonLogic instance = new MultitonLogic();
             string tempUser = loginUsername.Text;
             string tempPass = loginPassword.Text;
 
-            var checker = instance.GetUser(tempUser, tempPass);
-            if (checker == true) 
+            if (MultitonLogic.Exists(tempUser) == true)
                 MessageBox.Show("Dobrodošli, " + tempUser + " !");
             else
                 MessageBox.Show("Ne postojite u našoj bazi korisnika");
+
         }
 
-        private void goBack_Click(object sender, EventArgs e)
-            {
-                this.Hide();
-                Form1 form1 = new Form1();
-                form1.ShowDialog();
-            }
-        }
-} 
+    }
+}
+
